@@ -21,7 +21,7 @@ init_cvat:
 	docker-compose -f docker-compose.yml -f docker-compose.dev.yml -f docker-compose.override.yml build
 
 # To bring up CVAT, run: `make run_cvat`
-# Once all the containers are up, navigate to <host ip>:8080 (may need to update the host ip in the override file)
+# Once all the containers are up, navigate to <host ip>:8080 (remember to export the CVAT_HOST variable with your current IP address)
 
 run_cvat:
 	docker-compose up -d
