@@ -1,9 +1,8 @@
 # Checkout develop branch first
 # Start CVAT
 # To start CVAT, navigate to <Your work directory>/cvat and check that docker-compose.override.yml is updated with the images folder you want to share with CVAT:
-# - change UI_HOST and CVAT_HOST to the IP address of the host computer
-# - change line 10 and line 30 to the path where the images are stored
-# - change line 25 to the path where CVAT can store its persistent volume data
+# - change line 6 and line 19 to the path where the images are stored
+# - change line 14 to the path where CVAT can store its persistent volume data
 #
 ## Note: for a new cvat install follow: https://openvinotoolkit.github.io/cvat/docs/administration/basics/installation/
 ## I had to modify several lines in cvat/settings/base.py:
@@ -12,7 +11,7 @@
 ## LOCAL_LOAD_MAX_FILES_COUNT = 4500
 ## LOCAL_LOAD_MAX_FILES_SIZE = 2000 * 1024 * 1024  # 512 MB
 
-# Set the environment variable for the public IP of the local machine:
+# IMPORTANT: Set the environment variable for the public IP of the local machine:
 # export CVAT_HOST=10.2.10.59
 
 # checkout the latest release of cvat:
