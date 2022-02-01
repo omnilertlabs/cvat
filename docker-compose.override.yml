@@ -3,7 +3,7 @@ version: '3.3'
 services:
   cvat:
     environment:
-      CVAT_SHARE_URL: '/home/trainer/Trainer_Storage/image_repositories/weapons'
+      CVAT_SHARE_URL: '/home/ubuntu/image_repositories'
     volumes:
       - cvat_share:/home/django/share:ro
 
@@ -11,10 +11,10 @@ volumes:
   cvat_data:
     driver_opts:
       type: none
-      device: /home/trainer/Trainer_Storage/cvat_data
+      device: /home/ubuntu/cvat_data
       o: bind
   cvat_share:
     driver_opts:
       type: none
-      device: /home/trainer/Trainer_Storage/image_repositories/weapons
+      device: /home/ubuntu/image_repositories
       o: bind
