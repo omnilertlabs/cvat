@@ -3,15 +3,25 @@ version: '3.3'
 services:
   cvat:
     environment:
+      ALLOWED_HOSTS: '*'
+      UI_SCHEME: http
+      UI_HOST: <set to something>
+      UI_PORT: 7080 <I don't know why I have this at 7080, might need to be 8080>
       CVAT_SHARE_URL: '/home/ubuntu/image_repositories'
     volumes:
       - cvat_share:/home/django/share:ro
+      - cvat_data:/home/django/data
+    ports:
+      - '80:8080'
+  cvat_proxy:
+    environment:
+      CVAT_HOST: <set to same as UI HOST>
 
 volumes:
   cvat_data:
     driver_opts:
       type: none
-      device: /home/ubuntu/cvat_data
+      device: /home/data/cvat_data
       o: bind
   cvat_share:
     driver_opts:
