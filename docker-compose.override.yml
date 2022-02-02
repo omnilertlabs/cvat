@@ -13,9 +13,6 @@ services:
       - cvat_data:/home/django/data
     ports:
       - '80:8080'
-  cvat_proxy:
-    environment:
-      CVAT_HOST: cvat.omnilert.io
 
 volumes:
   cvat_data:
