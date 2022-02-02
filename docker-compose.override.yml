@@ -5,8 +5,8 @@ services:
     environment:
       ALLOWED_HOSTS: '*'
       UI_SCHEME: http
-      UI_HOST: cvat.omnilert.io
-      UI_PORT: 8080
+      #UI_HOST: 172.16.77.242
+      #UI_PORT: 8080
       CVAT_SHARE_URL: '/home/ubuntu/image_repositories'
     volumes:
       - cvat_share:/home/django/share:ro
