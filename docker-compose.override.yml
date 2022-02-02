@@ -14,7 +14,16 @@ services:
     ports:
       - '80:8080'
 
+  cvat_db:
+    volumes:
+      - cvat_db:/var/lib/postgresql/data
+
 volumes:
+  cvat_db:
+    driver_opts:
+      type: none
+      device: /home/ubuntu/cvat_db
+      o: bind
   cvat_data:
     driver_opts:
       type: none
